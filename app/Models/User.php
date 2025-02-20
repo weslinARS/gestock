@@ -54,4 +54,21 @@ class User extends Authenticatable
             "id"
         );
     }
+
+    public function cashRegister(){
+        return $this->hasMany(
+            CashRegister::class,
+            "user_id",
+            "id"
+        );
+    }
+
+    public function orders(){
+        return $this->hasMany(SupplierOrder::class,"user_id","id");
+    }
+
+    public function sales(){
+        return $this->hasMany(Sale::class,
+        "user_id", "id");
+    }
 }

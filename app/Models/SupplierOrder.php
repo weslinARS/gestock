@@ -27,4 +27,6 @@ class SupplierOrder extends Model
             "delivery_date" => "date",
         ];
     }
+
+
 }
