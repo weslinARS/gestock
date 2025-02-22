@@ -1,21 +1,128 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-import forms from '@tailwindcss/forms';
-
+import forms from "@tailwindcss/forms";
+import defaultTheme from "tailwindcss/defaultTheme";
+import preset from "./vendor/filament/support/tailwind.config.preset";
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-    ],
+  presets: [require("./vendor/wireui/wireui/tailwind.config.js"), preset],
+  content: [
+    "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+    "./storage/framework/views/*.php",
+    "./resources/views/**/*.blade.php",
+    "./app/Filament/**/*.php",
+    "./resources/views/filament/**/*.blade.php",
+    "./vendor/filament/**/*.blade.php",
+    "./vendor/wireui/wireui/src/*.php",
+    "./vendor/wireui/wireui/ts/**/*.ts",
+    "./vendor/wireui/wireui/src/WireUi/**/*.php",
+    "./vendor/wireui/wireui/src/Components/**/*.php",
+  ],
 
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        primary: {
+          50: "#e6e9e8",
+          100: "#cdd3d2",
+          200: "#9ba7a5",
+          300: "#6a7b77",
+          400: "#384f4a",
+          500: "#06231d",
+          600: "#051c17",
+          700: "#041511",
+          800: "#020e0c",
+          900: "#010706",
         },
-    },
+        secondary: {
+          50: "#e6f0ee",
+          100: "#cde0dd",
+          200: "#9cc2ba",
+          300: "#6aa398",
+          400: "#398575",
+          500: "#076653",
+          600: "#065242",
+          700: "#043d32",
+          800: "#032921",
+          900: "#011411",
+        },
+        accent: {
+          50: "#fcfde9",
+          100: "#f9fcd4",
+          200: "#f4f9a8",
+          300: "#eef57d",
+          400: "#e9f251",
+          500: "#e3ef26",
+          600: "#b6bf1e",
+          700: "#888f17",
+          800: "#5b600f",
+          900: "#2d3008",
+        },
 
-    plugins: [forms],
+        neutral: {
+          50: "#f7faf9",
+          100: "#eef5f3",
+          200: "#ddeae7",
+          300: "#cce0dc",
+          400: "#bbd5d0",
+          500: "#aacbc4",
+          600: "#88a29d",
+          700: "#667a76",
+          800: "#44514e",
+          900: "#222927",
+        },
+        "base-100": {
+          50: "#fefefe",
+          100: "#fcfdfd",
+          200: "#f9fcfb",
+          300: "#f7fafa",
+          400: "#f4f9f8",
+          500: "#f1f7f6",
+          600: "#c1c6c5",
+          700: "#919494",
+          800: "#606362",
+          900: "#303131",
+        },
+        erro: {
+          50: "#ffeded",
+          100: "#ffdbda",
+          200: "#ffb7b5",
+          300: "#ff9490",
+          400: "#ff706b",
+          500: "#ff4c46",
+          600: "#cc3d38",
+          700: "#992e2a",
+          800: "#661e1c",
+          900: "#330f0e",
+        },
+        warning: {
+          50: "#fff5eb",
+          100: "#feead6",
+          200: "#fdd6ad",
+          300: "#fdc185",
+          400: "#fcad5c",
+          500: "#fb9833",
+          600: "#c97a29",
+          700: "#975b1f",
+          800: "#643d14",
+          900: "#321e0a",
+        },
+        success: {
+          50: "#e6fcf2",
+          100: "#ccf9e6",
+          200: "#99f2cd",
+          300: "#66ecb3",
+          400: "#33e59a",
+          500: "#00df81",
+          600: "#00b267",
+          700: "#00864d",
+          800: "#005934",
+          900: "#002d1a",
+        },
+      },
+    },
+  },
+
+  plugins: [forms],
 };
